@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Lab 2: Intro to Three.js Part 1</title>
+        <style>
+            body { margin: 0; }
+            canvas { display: block; }
+        </style>
+    </head>
+    <body>
+        <script src="../three.js-master/build/three.js"></script>
+        <script>
+            var scene = new THREE.Scene();
+            var camera = new THREE.PerspectiveCamera(75,
+            window.innerWidth/window.innerHeight, 0.1, 1000);
+
+            var renderer = new THREE.WebGLRenderer();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            document.body.appendChild(renderer.domElement);
+                                                     
+                                                     
+                                                     var geometry = new THREE.BoxGeometry();
+                                                     var geometry1 = new THREE.BoxGeometry();
+                                                      var geometry2 = new THREE.BoxGeometry();
+                                                     
+                                                     var material = new THREE.MeshBasicMaterial( {color: 0x00ff00} );
+                                                     var material1 = new THREE.MeshBasicMaterial( {color: 0x00ffee} );
+                                                     var material2 = new THREE.MeshBasicMaterial( {color: 0xeeffee} );
+                                                     
+                                                     var cube = new THREE.Mesh(geometry, material);
+                                                     var cube1 = new THREE.Mesh(geometry1, material1);
+                                                     var cube2 = new THREE.Mesh(geometry2, material2);
+                                                     
+                                                     scene.add(cube);
+                                                     scene.add(cube1);
+                                                     scene.add(cube2);
+                                                    
+                                                     camera.position.z = 5; //this moves the camera towards the viewer
+                                                     
+                                                     cube1.position.set(2,2,1);
+                                                     cube2.position.set(-2,-2,1);
+        
+        function animate() {
+        requestAnimationFrame(animate);
+        renderer.render(scene, camera);
+        geometry.rotateX(0.01);
+        geometry.rotateY(0.01);
+        geometry1.rotateZ( .1 );
+                                                     geometry2.translate( .001, .001, -.001 );
+        }
+        animate();
+
+
+
+        </script>
+    </body>
+</html>
+
