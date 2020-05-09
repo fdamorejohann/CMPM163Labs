@@ -30,6 +30,8 @@ cube2: to remedy this, cube 2 used the same texture, but also incorporated a nor
 cube 3: Similar to cube 2, except I traded out the texture and normal map for different ones. This time however, the normal map chosen was for a different texture, giving the cube a flashing pattern that was incongruent with the texture underneath. This was purely a cosmetic choice.
 Cube 4: cube 4 used vertex shaders and fragment shaders to load a texture onto a cube. These textures were scanned pixel by pixel for their color by the vertex shader. In the decleration of the material, I set it to equal a shader material which used the vertex and fragment shader, along with a variable uniforms which held the texture.jpg.
 Cube5 : cube 5 was made using fragment and vertex shaders as well, except this time, the task was to tile the texture multiple times onto the cube. The way I did this was to first multiple the coordinate read off of the texture and multiply it by two. This would mean that each pixel sampled would be one 2x distance, shrinking the square into the corner of the screen. Then, I moded the value of the vector by 1, meaning that when the vertex shader had finished sampling the texture, it would be able to start again and sample the texture for another square .5 units away. This was able to imprint the square in a texture pattern. 
+
+
 LAB 5
 
 link : https://drive.google.com/file/d/12J8TY3WO3rL143VMJG7Pf-flQvNE86LH/view?usp=sharing
