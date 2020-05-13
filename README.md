@@ -38,4 +38,19 @@ link : https://drive.google.com/file/d/12J8TY3WO3rL143VMJG7Pf-flQvNE86LH/view?us
 
 The modifications I made were to the materials of the tracks and the particle effect to give a specific feeling. I wanted the track to be water themed, with the particle effect to look like splashing water. To match the blue track feeling, I added giant blue gummy bears to make the track more fun.
 
+LAB 6
+
 ![](/photos/lab6photo.png)
+
+
+Definitions:
+point light : light which extends out to a defined radius, unlike other light sources, it is defined by its circular range. seen as the red circle ontop of the square.
+Spotlight : defined by a cone shape which it extends. seen as the blue light to the right of the square.
+Directional light : light which is more broad than point light or spotlight. seen as the reflection on the objects in the scene. It is a light which points in a specific direciton, instead of a radius or cone light point light / spotlight.
+Area light : light shined in a specific shape. similar to point light & spotlight as it has shape constraints, but the difference is the light only shines from one direction of the shape.
+
+To make the object look like my kitchen table, the most important thing was the glossyness of the table and the color. To do this, I first set the color to be an orangish color, and point a point light facing the object to give it the same reflective shine as seen in the photo. Second, I set the material to have a higher metalic property to give it more shine. For the shader, I used the standard one, as the material glossyness was enough to recreate the object.
+
+The two textured objects I used were assets from the asset store. The first one was a bubble texture which I put on the cylinder. The second one was a roof shingle texture I put on the floor object.
+
+The skybox was called trance, which was found in a texture pack online.
