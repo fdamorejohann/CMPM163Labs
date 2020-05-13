@@ -43,6 +43,9 @@ LAB 6
 ![](/photos/lab6photo.png)
 
 
+REAL PHOTO : KITCHEN TABLE
+![](/photos/IMG_2901.jpeg)
+
 Definitions:
 point light : light which extends out to a defined radius, unlike other light sources, it is defined by its circular range. seen as the red circle ontop of the square.
 Spotlight : defined by a cone shape which it extends. seen as the blue light to the right of the square.
