@@ -37,3 +37,5 @@ LAB 5
 link : https://drive.google.com/file/d/12J8TY3WO3rL143VMJG7Pf-flQvNE86LH/view?usp=sharing
 
 The modifications I made were to the materials of the tracks and the particle effect to give a specific feeling. I wanted the track to be water themed, with the particle effect to look like splashing water. To match the blue track feeling, I added giant blue gummy bears to make the track more fun.
+
+![](/photos/lab6photo.png)
