@@ -57,3 +57,7 @@ To make the object look like my kitchen table, the most important thing was the 
 The two textured objects I used were assets from the asset store. The first one was a bubble texture which I put on the cylinder. The second one was a roof shingle texture I put on the floor object.
 
 The skybox was called trance, which was found in a texture pack online.
+
+LAB 7
+
+photo 1: ![](/photos/Screen Shot 2020-05-19 at 11.14.46 PM.png)
