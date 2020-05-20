@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Lab 7: Mesh Manipulation</title>
+        <style>
+            body { margin: 0; }
+            canvas { display: block; }
+        </style>
+    </head>
+    <body>
+        <script src="../three.js-master/build/three.js"></script>
+         <script
+        src="../three.js-master/examples/js/loaders/GLTFLoader.js"></script>
+        <script id="vertexShader" type="x-shader/x-vertex">
+                    // code for vertex shader
+                    uniform sampler2D heightMap1;
+                    varying vec2 vUv;
+                       uniform float test;
+                    void main() {
+                       vUv = uv;
+                       vec4 heightColor = texture2D(heightMap1, uv);
+                       vec3 newPosition = position + normal * test * heightColor.r;
+                       vec4 modelViewPosition = modelViewMatrix * vec4(newPosition, 1.0);
+                       gl_Position = projectionMatrix * modelViewPosition;
+                    }
+               </script>
+               <script id="fragmentShader" type="x-shader/x-fragment">
+                    // code for fragment shader
+                    uniform sampler2D texture1;
+                    varying vec2 vUv;
+                    void main() {
+                       gl_FragColor = texture2D(texture1, vUv);
+                    }
+               </script>
+               <script id="vertexShader1" type="x-shader/x-vertex">
+                                 // code for vertex shader
+                                 uniform sampler2D heightMap2;
+                                 varying vec2 vUv;
+                                    uniform float test;
+                                 void main() {
+                                 
+                                    vUv = uv;
+                                    vec4 heightColor = texture2D(heightMap2, uv);
+                                    vec3 newPosition = position + normal * 3.0 * heightColor.r;
+                                    vec4 modelViewPosition = modelViewMatrix * vec4(newPosition, 1.0);
+                                    gl_Position = projectionMatrix * modelViewPosition;
+                                 }
+                            </script>
+                            <script id="fragmentShader1" type="x-shader/x-fragment">
+                                 // code for fragment shader
+                                 uniform sampler2D texture2;
+                                 varying vec2 vUv;
+                                 void main() {
+                                    gl_FragColor = texture2D(texture2, vUv);
+                                 }
+                            </script>
+        <script>
+        var modeldog;
+            // setup the scene
+            var scene = new THREE.Scene();
+            var camera = new THREE.PerspectiveCamera(75,
+window.innerWidth/window.innerHeight, 0.1, 1000);
+            var renderer = new THREE.WebGLRenderer();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            document.body.appendChild(renderer.domElement);
+
+                // add two point lights
+            const light = new THREE.PointLight(0xffffff, 1.0);
+            light.position.set(-10,5,-25);
+            scene.add(light);
+            const light2 = new THREE.PointLight(0xffffff, 1.0);
+            light2.position.set(0,5,-25);
+            scene.add(light2);
+            
+           
+                var uniforms = {
+                    test: { value: 1.0 },
+                    texture1: { type: "t", value:THREE.ImageUtils.loadTexture("water.png")},
+                    heightMap1: { type: "t",value:THREE.ImageUtils.loadTexture("height.png")}
+                    };
+                   
+                    var uniforms2 = {
+                    texture2: { type: "t", value:THREE.ImageUtils.loadTexture("hill.png")},
+                    heightMap2: { type: "t",value:THREE.ImageUtils.loadTexture("unnamed.png")}
+                    };
+                   
+
+                  var material = new THREE.ShaderMaterial({ uniforms: uniforms,
+                    vertexShader: document.getElementById('vertexShader').textContent, fragmentShader: document.getElementById('fragmentShader').textContent});
+                         var plane = new THREE.Mesh(new THREE.PlaneGeometry(15, 15, 80,
+                         80), material);
+                         plane.position.z = -10;
+                        plane.position.y = -1;
+                          //plane.rotation.x = -Math.PI / 2;
+                         plane.rotation.x = 5;
+                         
+                         var material2 = new THREE.ShaderMaterial({ uniforms: uniforms2,
+                                            vertexShader: document.getElementById('vertexShader1').textContent, fragmentShader: document.getElementById('fragmentShader1').textContent});
+                                                 var plane2 = new THREE.Mesh(new THREE.PlaneGeometry(5, 5, 80,
+                                                 80), material2);
+                                                 plane2.position.z = -10;
+                                                plane2.position.y = .3;
+                                                  //plane.rotation.x = -Math.PI / 2;
+                                                 plane2.rotation.x = 5;
+                                                 
+                      
+                            scene.add(plane2);
+                         
+                         
+    scene.add(plane);
+    
+                            
+    var light3 = new THREE.PointLight(0x00eeff, 1, 1000);
+    light3.position.set(50, 50, 50);
+    scene.add(light3);
+
+
+   var loader1 = new THREE.GLTFLoader();
+    loader1.load('dog.glb', function (gltf1) {
+                gltf1.scene.position.y = -3;
+                    gltf1.scene.position.x = -0.5;
+                 gltf1.scene.position.z = -10;
+                 gltf1.scene.rotation.y = 80;
+                gltf1.scene.scale.set(.09,.09,.09) // scale here
+                 
+                modeldog = gltf1.scene;
+      //scene.add(modeldog);
+        }, function (xhr) {
+      console.log((xhr.loaded / xhr.total * 100) + '% loaded' );
+        }, function (error) {
+       console.error(error);
+      });
+    
+
+
+camera.rotation.set(.05,0,0);
+ camera.position.y = 4;
+ camera.position.z = 2;
+ camera.position.x = 0;
+
+                
+                
+
+                  var wave = 2.0;
+                var angle = 0;
+                var changing = 0;
+                
+            function animate(time) {
+            angle = angle + .0001;
+            
+       if(modeldog)
+       {
+      modeldog.rotation.y += .00005;
+      modeldog.position.x = -0.5 + Math.cos(angle)/2.0;
+                  }
+      
+            material.uniforms.test.value = (Math.cos(angle) / wave);
+           plane.position.y =  0.5 - (Math.cos(angle) / (wave*2));
+              
+              
+           // if(matShader) matShader.uniforms.time.value = time/1000;
+
+                requestAnimationFrame(animate);
+                renderer.render(scene, camera);
+            }
+            renderer.setAnimationLoop(animate)
+        </script>
+    </body>
+</html>
+
