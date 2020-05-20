@@ -60,4 +60,6 @@ The skybox was called trance, which was found in a texture pack online.
 
 LAB 7
 
-photo 1: ![](/photos/Screen Shot 2020-05-19 at 11.14.46 PM.png)
+photo 1: ![](/photos/water.png)
+
+photo 2: ![](/photos/hill1.png)
