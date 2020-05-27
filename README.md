@@ -75,3 +75,10 @@ parter:
 2) The most challenging part for them was figuring out what dependencies are required for the lab. They said that while doing part 1, they were incapable of completing it for quite some time because they kept getting an error saying they were missing dependencies.
 3)Their favorite part was making moving water, as they haven't done proper moving graphics in unity until this lab.
 4)We did not help eachother with this lab.
+
+
+LAB 8 
+city photos--
+photo 1: ![](/photos/city1.png)
+
+photo 2: ![](/photos/city2.png)
