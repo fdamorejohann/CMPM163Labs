@@ -57,3 +57,21 @@ To make the object look like my kitchen table, the most important thing was the 
 The two textured objects I used were assets from the asset store. The first one was a bubble texture which I put on the cylinder. The second one was a roof shingle texture I put on the floor object.
 
 The skybox was called trance, which was found in a texture pack online.
+
+LAB 7
+
+photo 1: ![](/photos/water.png)
+
+photo 2: ![](/photos/hill1.png)
+
+moving water link: https://drive.google.com/file/d/15_BbyvK4kVPR-xeDOmTMosyggjQUDyXx/view?usp=sharing
+
+Last video link: https://drive.google.com/file/d/1XgGerZvd_glMV5G0FOndzG2d0VkuBVYU/view?usp=sharing
+
+--for my last video, I decided to recreate moving water by changing the texture and heightmap based off of a sinusoidal wave. I also had the water plane move up and down to simulate high tide and low tide.
+
+parter:
+1) My parter did part 1
+2) The most challenging part for them was figuring out what dependencies are required for the lab. They said that while doing part 1, they were incapable of completing it for quite some time because they kept getting an error saying they were missing dependencies.
+3)Their favorite part was making moving water, as they haven't done proper moving graphics in unity until this lab.
+4)We did not help eachother with this lab.
