@@ -82,3 +82,8 @@ city photos--
 photo 1: ![](/photos/city1.png)
 
 photo 2: ![](/photos/city2.png)
+
+
+for my custom city, I based it off of settlers of catan, and wanted to create a map with random resouce placement.
+Inspiration : ![](/photos/catan.png)
+video showing map: https://drive.google.com/file/d/1ZgMFXDs0kQtQTE_8RSYlOGV-JDrZVsO1/view?usp=sharing
