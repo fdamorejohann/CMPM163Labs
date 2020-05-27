@@ -87,3 +87,6 @@ photo 2: ![](/photos/city2.png)
 for my custom city, I based it off of settlers of catan, and wanted to create a map with random resouce placement.
 Inspiration : ![](/photos/catan.png)
 video showing map: https://drive.google.com/file/d/1ZgMFXDs0kQtQTE_8RSYlOGV-JDrZVsO1/view?usp=sharing
+
+
+My parter did part 2, and for the creative section he did a mud and stone style map with differenc colors for different heights. I found it interesting, and it showed me that you can choose colors for the height cubes based on their position and height.
